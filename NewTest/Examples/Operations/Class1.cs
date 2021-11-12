@@ -36,6 +36,7 @@ namespace NewTest
             var lastStepTitle = Driver.WaitForElement(LastStepTitle).Text;
 
             return lastStepTitle;
+            //test
         }
     }
 }
