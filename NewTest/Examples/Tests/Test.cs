@@ -16,6 +16,7 @@ namespace NewTest.Examples.Tests
             if (SeleniumHelpers.Driver == null)
             {
                 SeleniumHelpers.Driver = new ChromeDriver();
+                //test.
             }
         }
 
