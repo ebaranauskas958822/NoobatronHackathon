@@ -4,9 +4,9 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace NewTest.GuessTheFlag
+namespace NewTest.MusicChallenge
 {
-   public  class FlagTest
+   public  class MusicTest
     {
         private static readonly IWebDriver Driver = SeleniumHelpers.Driver;
 
@@ -33,8 +33,8 @@ namespace NewTest.GuessTheFlag
         [Test]
         public void SelectCountry()
         {
-            FlagWeb.GoToPage();
-            FlagWeb.SelectValue();
+            MusicWeb.GoToGuitarPage();
+            MusicWeb.PlayGuitar();
         }
     }
 }
