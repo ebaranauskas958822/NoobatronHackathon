@@ -30,10 +30,10 @@ namespace Chess.ChessTest.Tests
 
         public void TearDown()
         {
-            if (SeleniumHelpers.Driver != null)
-            {
-                SeleniumHelpers.Driver.Quit();
-            }
+            //if (SeleniumHelpers.Driver != null)
+            //{
+            //    SeleniumHelpers.Driver.Quit();
+            //}
         }
 
         [Test]
@@ -64,17 +64,16 @@ namespace Chess.ChessTest.Tests
             while (true) {
                 try
                 {
-                    Assert.AreEqual("Checkmate!", Driver.SwitchTo().Alert().Text);
+                    if (!crossChess(whiteChessSelectors, blackChessSelectors))
+                    {
+                        makeMove(whiteChessSelectors);
+                    }
                 }
                 catch
                 {
-
+                    break;
                 }
 
-                if (!crossChess(whiteChessSelectors, blackChessSelectors))
-                {
-                    makeMove(whiteChessSelectors);
-                }
             }
         }
 
@@ -101,7 +100,7 @@ namespace Chess.ChessTest.Tests
                     char width = square[0];
                     int height = int.Parse(square.Substring(1, 1));
 
-                    if (item == "img[data-piece='wP']" || item == "img[data-piece='wR']")
+                    if (item == "img[data-piece='wP']")
                     {
                         if (cutOneChess(e, getPreviuosLetter(width), height + 1, blackChess)) return true;
                         if (cutOneChess(e, getNextLetter(width), height + 1, blackChess)) return true;
@@ -121,7 +120,7 @@ namespace Chess.ChessTest.Tests
                     }
 
 
-                    if (item == "img[data-piece='wQ']")
+                    if (item == "img[data-piece='wQ']" || item == "img[data-piece='wR']")
                     {
 
                         for (int i = height + 1; i <= maxHeight; i++)
