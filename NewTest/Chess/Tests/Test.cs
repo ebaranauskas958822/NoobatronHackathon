@@ -106,7 +106,7 @@ namespace Chess.ChessTest.Tests
                         if (cutOneChess(e, getNextLetter(width), height + 1, blackChess)) return true;
                     }
 
-                    if (item == "img[data-piece='bK']") {
+                    if (item == "img[data-piece='wK']") {
                         if (cutOneChess(e, width, height + 1, blackChess)) return true;
                         if (cutOneChess(e, getPreviuosLetter(width), height + 1, blackChess)) return true;
                         if (cutOneChess(e, getNextLetter(width), height + 1, blackChess)) return true;
