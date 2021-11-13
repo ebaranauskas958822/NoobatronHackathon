@@ -21,13 +21,13 @@ namespace NewTest.MusicChallenge
             }
         }
 
-        [OneTimeTearDown]
+        [TearDown]
         public void TearDown()
         {
-            if (SeleniumHelpers.Driver != null)
-            {
-                SeleniumHelpers.Driver.Quit();
-            }
+            //if (SeleniumHelpers.Driver != null)
+            //{
+            //    SeleniumHelpers.Driver.Quit();
+            //}
         }
 
         [Parallelizable]
