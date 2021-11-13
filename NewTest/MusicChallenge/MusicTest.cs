@@ -33,8 +33,8 @@ namespace NewTest.MusicChallenge
         [Test]
         public void SelectCountry()
         {
-            MusicWeb.GoToGuitarPage();
-            MusicWeb.PlayGuitar();
+            MusicWeb.GoToPianoPage();
+            MusicWeb.PlayPiano();
         }
     }
 }
