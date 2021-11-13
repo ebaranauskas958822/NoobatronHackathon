@@ -6,11 +6,12 @@ using OpenQA.Selenium.Chrome;
 
 namespace NewTest.MusicChallenge
 {
-   public  class MusicTest
+    [TestFixture]
+    public  class MusicTest
     {
         private static readonly IWebDriver Driver = SeleniumHelpers.Driver;
 
-        [OneTimeSetUp]
+        [SetUp]
 
         public void SetupTests()
         {
@@ -21,20 +22,28 @@ namespace NewTest.MusicChallenge
         }
 
         [OneTimeTearDown]
-
         public void TearDown()
         {
-            //if (SeleniumHelpers.Driver != null)
-            //{
-            //    SeleniumHelpers.Driver.Quit();
-            //}
+            if (SeleniumHelpers.Driver != null)
+            {
+                SeleniumHelpers.Driver.Quit();
+            }
         }
 
+        [Parallelizable]
         [Test]
-        public void SelectCountry()
+        public void PlayPiano()
         {
-            MusicWeb.GoToPianoPage();
-            MusicWeb.PlayPiano();
+            MusicPiano.GoToPianoPage();
+            MusicPiano.PlayPiano();
+        }
+
+        [Parallelizable]
+        [Test]
+        public void PlayDrumKit()
+        {
+            MusicDrumKit.GoToDrumPage();
+            MusicDrumKit.PlayDrumKit();
         }
     }
 }
